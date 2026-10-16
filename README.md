@@ -1,57 +1,64 @@
-# A certificate for C<sub>82</sub> < 0.25360615 (essential minimum of the Zhang–Zagier height)
+# A certificate for C<sub>82</sub> < 0.25353524 (essential minimum of the Zhang–Zagier height)
 
 This repository contains an explicit construction and two independently written rigorous checkers proving
 
-    C_82 = ess. min. of h(α) + h(1 − α)  <  0.25360615,
+    C_82 = ess. min. of h(α) + h(1 − α)  <  0.25353524,
 
 where h is the absolute logarithmic Weil height and C<sub>82</sub> is constant 82a in
 [Tao's optimization-constants table](https://teorth.github.io/optimizationproblems/constants/82a.html).
-The previous best upper bound was 0.2536331090… (M. Grinsztajn, June 2026,
-[maaxgrin/zhang-zagier-c82-bound](https://github.com/maaxgrin/zhang-zagier-c82-bound)); the best lower bound is 0.24874.
 
-> **Correction (15 Oct 2026):** a smaller upper bound, **0.2535744749…**, was reported in September 2026 by the Épi project
-> ([BakeLab/Epi-results, zhang-zagier](https://github.com/BakeLab/Epi-results/tree/main/records/zhang-zagier/zhang_zagier_c82));
-> it is not yet listed on Tao's table. The certificate here improves the table-listed value (Grinsztajn), **not** the best
-> known bound. We re-evaluated the Épi construction independently and it encloses at 0.25356893…
+Previous upper bounds: 0.2536331090… on the table (M. Grinsztajn, June 2026,
+[maaxgrin/zhang-zagier-c82-bound](https://github.com/maaxgrin/zhang-zagier-c82-bound)), and **0.2535744749…** reported by the
+Épi project in September 2026 ([BakeLab/Epi-results](https://github.com/BakeLab/Epi-results/tree/main/records/zhang-zagier/zhang_zagier_c82);
+not yet on the table; we re-evaluate its construction at 0.25356893…). The best lower bound is 0.24874.
 
 ## Method and credit
 
 The construction is C. Doche's limit-point method (C. Doche, *Zhang–Zagier heights of perturbed polynomials*,
-J. Théor. Nombres Bordeaux 13 (2001) 103–110, equation (9); see also Math. Comp. 70 (2001)). A ratio A/Q of
-integer polynomials evaluated on T(z) = z(1 − z) yields infinitely many algebraic numbers whose Zhang–Zagier
-height tends to the quantity B below. All polynomial factors are the ones used by Doche (P1, …, P9, Q1, Q2)
-and by Grinsztajn (R0 = Q1 − P1⁵P2⁵P4P8, R2 = Q2 + P1⁵P2⁵P4P7). Grinsztajn's record uses the square-free
-denominator Q1·Q2·R0·R2·P7·P9. **The only change here is to give the six denominator factors unequal
-multiplicities**, chosen jointly with the numerator exponents by a linear program, and then rounded to the
-exact data below.
+J. Théor. Nombres Bordeaux 13 (2001) 103–110, eq. (9)). It builds on the factor library of Doche and Grinsztajn and, decisively,
+on **Épi's construction, which introduced unequal denominator multiplicities and the extra factors Ed5 and En6**. This
+certificate keeps all of Épi's factors, adds Doche's P7 to the denominator, adds **eleven new numerator factors** (integer-polynomial
+perturbations of products of the base factors, screened with LP dual weights), and re-optimises all multiplicities and exponents
+jointly with a linear program on a 524,288-point grid before exact rational rounding.
 
-| Denominator factor | degree | multiplicity |
-| --- | ---: | ---: |
-| Q1 | 28 | 863,060 |
-| Q2 | 28 | 605,173 |
-| R0 | 28 | 730,845 |
-| R2 | 28 | 773,505 |
-| P7 | 12 | 503,781 |
-| P9 | 16 | 670,143 |
+An earlier version of this repository (now in `v1/`) claimed 0.25360615 using unequal multiplicities on Grinsztajn's factors;
+that was not new (Épi had already done it) and is superseded.
 
-deg Q = 99,999,984.
+| Denominator factor | degree | multiplicity | origin |
+| --- | ---: | ---: | --- |
+| Q1 | 28 | 8,628,478 | Doche |
+| Q2 | 28 | 6,768,665 | Doche |
+| R0 | 28 | 3,739,372 | Grinsztajn |
+| R2 | 28 | 3,928,319 | Grinsztajn |
+| P7 | 12 | 1,227,044 | Doche |
+| P9 | 16 | 10,338,327 | Doche |
+| Ed5 | 28 | 6,215,959 | Épi |
 
-| Numerator factor | degree | exponent q (exact) | ≈ |
-| --- | ---: | --- | ---: |
-| P1 | 1 | 598783061341/31250 | 19161057.962912 |
-| P2 | 1 | 8513269514009/500000 | 17026539.028018 |
-| P3 | 3 | 800278723623/1000000 | 800278.723623 |
-| P4 | 4 | 465281401277/125000 | 3722251.210216 |
-| P6 | 8 | 257780859473/100000 | 2577808.594730 |
-| P8 | 12 | 51510637553/40000 | 1287765.938825 |
+deg Q = 999,999,964.
 
-deg A ≈ 89,553,098.03 < deg Q. The exact integer coefficient lists are in `certificate.json`
-(SHA-256 `8475c47800aa9f6b4c2b80a37de2dc506d66e89777fa0b4c946f6ec5f7e6f7e1`). Logarithmic Mahler measures and
-log-moduli are additive in the exponents, so the enormous products are never expanded.
+| Numerator factor | degree | exponent ≈ | origin |
+| --- | ---: | ---: | --- |
+| P1 | 1 | 1.53996e+08 | Doche |
+| P2 | 1 | 1.28141e+08 | Doche |
+| P3 | 3 | 1.01858e+07 | Doche |
+| P4 | 4 | 1.78916e+07 | Doche |
+| P6 | 8 | 2.9564e+07 | Doche |
+| P8 | 12 | 1.19716e+06 | Doche |
+| En6 | 16 | 2.18597e+06 | Épi |
+| broad1_3 | 28 | 367453 | new (this work) |
+| broad1_4 | 28 | 1.12952e+06 | new (this work) |
+| broad1_6 | 16 | 800823 | new (this work) |
+| broad1_10 | 16 | 4.70275e+06 | new (this work) |
+| broad2_1 | 14 | 732019 | new (this work) |
+| broad2_2 | 16 | 1.59423e+06 | new (this work) |
+| broad2_3 | 16 | 102262 | new (this work) |
+| broad2_4 | 16 | 108224 | new (this work) |
+| broad2_5 | 16 | 749325 | new (this work) |
+| broad2_6 | 16 | 360126 | new (this work) |
+| broad2_7 | 20 | 2.79274e+06 | new (this work) |
 
-The bound is
-
-    B = [ log M(Q(T)) + ∫_0^1 max(0, Σ_i q_i log|S_i(T(e^{2πit}))| − log|Q(T(e^{2πit}))|) dt ] / deg Q.
+deg A ≈ 912,815,716.26 < deg Q. Exact integer coefficients and rational exponents are in `certificate.json`
+(SHA-256 `1a4a508cbdedada605034c5e23fc66b76dd7618670fc75c1e8e00e44b4e01869`).
 
 ## Why the certificate implies the bound
 
@@ -135,8 +142,8 @@ no measure-approximation theorem, and no irreducibility of the R_j is needed.
 
 ## The two checkers
 
-**`verify.py`** composes each factor with T exactly in ℤ[z], encloses its complete root multiset with FLINT/Arb, and bounds the
-integral over dyadic panels of the circle with rigorous Taylor majorants:
+**`verify.py`** composes each factor with T(z) = z(1 − z) exactly in ℤ[z], encloses every root with FLINT/Arb and bounds the
+integral on dyadic panels with rigorous Taylor majorants:
 
 The code composes each input polynomial exactly with T in Z[z], then uses
 FLINT/Arb to enclose its complete root multiset (including multiplicities).
@@ -188,34 +195,36 @@ The checker aborts after depth 48 if a panel cannot be resolved. In
 particular it is not a general-purpose integrator for denominator roots
 on the unit circle. This certificate resolves every panel successfully.
 
-**`independent_check.py`** was written separately, without access to `verify.py`, by a referee pass whose job was to break the
-claim. It uses certified roots and Jensen's formula for the Mahler term and a different analytic enclosure of the integral.
+**`independent_check.py`** was written separately, without access to `verify.py`, by an adversarial referee: certified roots,
+Jensen's formula for the Mahler term and an analytic enclosure of the integral.
 
-## Running the check
-
-```sh
-pip install -r requirements.txt          # python-flint 0.9.0
-python verify.py certificate.json --tol 1e-9 --out verification.json      # ~1 min
-python independent_check.py certificate.json independent.json            # ~45 s
-```
-
-Results on the certificate:
+## Results
 
 | Checker | Certified upper bound on B |
 | --- | --- |
-| `verify.py` | 0.2536061496603042748… |
-| `independent_check.py` | 0.2536061496461358210… |
+| `verify.py` | 0.25353523215737909… |
+| `independent_check.py` | 0.25353523214 ± 5×10⁻¹² |
+| second referee's own evaluator | (0.2535352321383, 0.2535352321395) |
 
-Both are below the claimed 0.25360615. Controls for `independent_check.py`: `controls/doche2001.json` reproduces Doche's
-0.25444, `controls/grinsztajn2026.json` reproduces the current table value, and `controls/mutated_should_fail.json` (Q1's
-multiplicity doubled) fails the target and exits with status 1.
+Controls: `controls/epi2026.json` reproduces Épi's construction (≈ 0.2535689), `controls/grinsztajn2026.json` and
+`controls/doche2001.json` reproduce the older bounds, and `controls/mutated_should_fail.json` / `controls/mutated_v2_should_fail.json`
+fail the target.
+
+```sh
+pip install -r requirements.txt          # python-flint 0.9.0
+python verify.py certificate.json --tol 1e-10 --out verification.json
+python independent_check.py certificate.json independent.json 1e-8
+```
+
+## Priority
+
+As of 16 Oct 2026 we found no smaller published upper bound (Tao table and open PRs, Épi's repository history, DeepMind's
+AlphaEvolve result repositories, arXiv). A 2025 CIRM talk mentioned progress without a number we could check.
 
 ## AI assistance
 
-The construction search, the proof write-up and both checkers were developed with AI coding assistants (OpenAI Codex and
-Claude) under the author's direction, and the author checked the argument. The mathematical argument above is
-self-contained apart from Jensen's formula and standard facts on Mahler measure and heights, and every numerical claim is
-checked by the code in this repository.
+The construction search, the proof write-up and the checkers were developed with AI coding assistants (OpenAI Codex and Claude)
+under the author's direction, and the author checked the argument. Every numerical claim is checked by the code in this repository.
 
 ## License
 
