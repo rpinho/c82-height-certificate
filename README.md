@@ -9,6 +9,11 @@ where h is the absolute logarithmic Weil height and C<sub>82</sub> is constant 8
 The previous best upper bound was 0.2536331090… (M. Grinsztajn, June 2026,
 [maaxgrin/zhang-zagier-c82-bound](https://github.com/maaxgrin/zhang-zagier-c82-bound)); the best lower bound is 0.24874.
 
+> **Correction (15 Oct 2026):** a smaller upper bound, **0.2535744749…**, was reported in September 2026 by the Épi project
+> ([BakeLab/Epi-results, zhang-zagier](https://github.com/BakeLab/Epi-results/tree/main/records/zhang-zagier/zhang_zagier_c82));
+> it is not yet listed on Tao's table. The certificate here improves the table-listed value (Grinsztajn), **not** the best
+> known bound. We re-evaluated the Épi construction independently and it encloses at 0.25356893…
+
 ## Method and credit
 
 The construction is C. Doche's limit-point method (C. Doche, *Zhang–Zagier heights of perturbed polynomials*,
