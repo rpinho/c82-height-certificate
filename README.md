@@ -1,8 +1,8 @@
-# A certificate for C<sub>82</sub> < 0.25353524 (essential minimum of the Zhang–Zagier height)
+# A certificate for C<sub>82</sub> < 0.2534449 (essential minimum of the Zhang–Zagier height)
 
 This repository contains an explicit construction and two independently written rigorous checkers proving
 
-    C_82 = ess. min. of h(α) + h(1 − α)  <  0.25353524,
+    C_82 = ess. min. of h(α) + h(1 − α)  <  0.2534449,
 
 where h is the absolute logarithmic Weil height and C<sub>82</sub> is constant 82a in
 [Tao's optimization-constants table](https://teorth.github.io/optimizationproblems/constants/82a.html).
@@ -17,48 +17,61 @@ not yet on the table; we re-evaluate its construction at 0.25356893…). The bes
 The construction is C. Doche's limit-point method (C. Doche, *Zhang–Zagier heights of perturbed polynomials*,
 J. Théor. Nombres Bordeaux 13 (2001) 103–110, eq. (9)). It builds on the factor library of Doche and Grinsztajn and, decisively,
 on **Épi's construction, which introduced unequal denominator multiplicities and the extra factors Ed5 and En6**. This
-certificate keeps all of Épi's factors, adds Doche's P7 to the denominator, adds **eleven new numerator factors** (integer-polynomial
-perturbations of products of the base factors, screened with LP dual weights), and re-optimises all multiplicities and exponents
-jointly with a linear program on a 524,288-point grid before exact rational rounding.
+certificate keeps Épi's denominator factors, adds Doche's P7 to the denominator, and adds **25 new numerator factors** found by
+LP-dual-weighted evaluation lattices with LLL reduction; all multiplicities and exponents are re-optimised jointly by a linear program before exact
+rational rounding.
 
-An earlier version of this repository (now in `v1/`) claimed 0.25360615 using unequal multiplicities on Grinsztajn's factors;
-that was not new (Épi had already done it) and is superseded.
+Earlier versions: `v1/` claimed 0.25360615 using unequal multiplicities on Grinsztajn's factors (not new: Épi had already done it);
+`alternatives/round2_certificate_0.25353524.json` is an independent intermediate result (< 0.25353524). Both are superseded.
 
 | Denominator factor | degree | multiplicity | origin |
 | --- | ---: | ---: | --- |
-| Q1 | 28 | 8,628,478 | Doche |
-| Q2 | 28 | 6,768,665 | Doche |
-| R0 | 28 | 3,739,372 | Grinsztajn |
-| R2 | 28 | 3,928,319 | Grinsztajn |
-| P7 | 12 | 1,227,044 | Doche |
-| P9 | 16 | 10,338,327 | Doche |
-| Ed5 | 28 | 6,215,959 | Épi |
+| Q1 | 28 | 9,297,152 | Doche |
+| Q2 | 28 | 5,575,669 | Doche |
+| R0 | 28 | 3,376,055 | Grinsztajn |
+| R2 | 28 | 854,210 | Grinsztajn |
+| P7 | 12 | 4,177,785 | Doche |
+| P9 | 16 | 14,295,157 | Doche |
+| Ed5 | 28 | 6,652,059 | Épi |
 
-deg Q = 999,999,964.
+deg Q = 999,999,992.
 
-| Numerator factor | degree | exponent ≈ | origin |
+| Numerator factor (active) | degree | exponent ≈ | origin |
 | --- | ---: | ---: | --- |
-| P1 | 1 | 1.53996e+08 | Doche |
-| P2 | 1 | 1.28141e+08 | Doche |
-| P3 | 3 | 1.01858e+07 | Doche |
-| P4 | 4 | 1.78916e+07 | Doche |
-| P6 | 8 | 2.9564e+07 | Doche |
-| P8 | 12 | 1.19716e+06 | Doche |
-| En6 | 16 | 2.18597e+06 | Épi |
-| broad1_3 | 28 | 367453 | new (this work) |
-| broad1_4 | 28 | 1.12952e+06 | new (this work) |
-| broad1_6 | 16 | 800823 | new (this work) |
-| broad1_10 | 16 | 4.70275e+06 | new (this work) |
-| broad2_1 | 14 | 732019 | new (this work) |
-| broad2_2 | 16 | 1.59423e+06 | new (this work) |
-| broad2_3 | 16 | 102262 | new (this work) |
-| broad2_4 | 16 | 108224 | new (this work) |
-| broad2_5 | 16 | 749325 | new (this work) |
-| broad2_6 | 16 | 360126 | new (this work) |
-| broad2_7 | 20 | 2.79274e+06 | new (this work) |
+| P1 | 1 | 7.38361e+07 | Doche |
+| P2 | 1 | 7.19007e+07 | Doche |
+| P3 | 3 | 2.63924e+06 | Doche |
+| P4 | 4 | 7.04403e+06 | Doche |
+| P6 | 8 | 9.15272e+06 | Doche |
+| P8 | 12 | 399610 | Doche |
+| select2_1 | 34 | 199779 | new (this work) |
+| select2_11 | 24 | 354014 | new (this work) |
+| select2_15 | 27 | 48639.6 | new (this work) |
+| select2_22 | 28 | 660352 | new (this work) |
+| select2_25 | 32 | 248385 | new (this work) |
+| select2_36 | 18 | 352721 | new (this work) |
+| select3_7 | 28 | 890467 | new (this work) |
+| select4_0 | 24 | 457596 | new (this work) |
+| select4_1 | 42 | 1.96538e+06 | new (this work) |
+| select4_3 | 38 | 1.02685e+06 | new (this work) |
+| select5_0 | 39 | 1.15396e+06 | new (this work) |
+| select5_7 | 34 | 475532 | new (this work) |
+| select5_9 | 32 | 498762 | new (this work) |
+| select5_10 | 35 | 761373 | new (this work) |
+| select7_0 | 42 | 2.91629e+06 | new (this work) |
+| select8_0 | 22 | 1.10357e+06 | new (this work) |
+| select9_1 | 24 | 349767 | new (this work) |
+| select9_2 | 37 | 532982 | new (this work) |
+| select9_3 | 42 | 691442 | new (this work) |
+| select9_5 | 42 | 92495 | new (this work) |
+| select9_6 | 36 | 1.32266e+06 | new (this work) |
+| select9_7 | 39 | 120459 | new (this work) |
+| select10_0 | 41 | 1.21778e+06 | new (this work) |
+| select11_0 | 42 | 1.11039e+06 | new (this work) |
+| merged_0 | 30 | 582718 | new (this work) |
 
-deg A ≈ 912,815,716.26 < deg Q. Exact integer coefficients and rational exponents are in `certificate.json`
-(SHA-256 `1a4a508cbdedada605034c5e23fc66b76dd7618670fc75c1e8e00e44b4e01869`).
+deg A ≈ 944,662,258.83 < deg Q. Exact integer coefficients and rational exponents are in `certificate.json`
+(SHA-256 `b33626f367b6f52922746c0fee7bb008449cd0bb18efcb983ab20ff073350fce`).
 
 ## Why the certificate implies the bound
 
@@ -202,9 +215,9 @@ Jensen's formula for the Mahler term and an analytic enclosure of the integral.
 
 | Checker | Certified upper bound on B |
 | --- | --- |
-| `verify.py` | 0.25353523215737909… |
-| `independent_check.py` | 0.25353523214 ± 5×10⁻¹² |
-| second referee's own evaluator | (0.2535352321383, 0.2535352321395) |
+| `verify.py` | 0.25344468733362658… |
+| `independent_check.py` | 0.25344468733741928… |
+| adversarial referee's own evaluator | below 0.253444687331849 |
 
 Controls: `controls/epi2026.json` reproduces Épi's construction (≈ 0.2535689), `controls/grinsztajn2026.json` and
 `controls/doche2001.json` reproduce the older bounds, and `controls/mutated_should_fail.json` / `controls/mutated_v2_should_fail.json`
