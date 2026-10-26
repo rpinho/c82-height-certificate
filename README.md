@@ -1,5 +1,10 @@
 # A certificate for C<sub>82</sub> < 0.2534449 (essential minimum of the Zhang–Zagier height)
 
+Unrefereed preprints: [Hexagon 2610.00426v1](https://hexagonmath.org/2610.00426?version=1)
+and [Zenodo, corrected disclosure version](https://doi.org/10.5281/zenodo.23520716).
+The certificate bound was [merged into Tao's table on October 18, 2026](https://github.com/teorth/optimizationproblems/pull/229).
+Finite numerical checks and a public preprint do not constitute human expert peer review or formal verification.
+
 This repository contains an explicit construction and two independently written rigorous checkers proving
 
     C_82 = ess. min. of h(α) + h(1 − α)  <  0.2534449,
@@ -237,7 +242,7 @@ AlphaEvolve result repositories, arXiv). A 2025 CIRM talk mentioned progress wit
 ## AI assistance
 
 The construction search, the proof write-up and the checkers were developed with AI coding assistants (OpenAI Codex and Claude)
-under the author's direction, and the author checked the argument. Every numerical claim is checked by the code in this repository.
+under the author's direction. I reviewed the results at summary level; this does not claim a line-by-line human verification. The numerical checks are described above and do not replace expert review of the mathematical argument.
 
 ## License
 
