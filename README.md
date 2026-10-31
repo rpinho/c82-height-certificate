@@ -1,5 +1,7 @@
 # A certificate for C<sub>82</sub> < 0.2534449 (essential minimum of the Zhang–Zagier height)
 
+**Newer: C<sub>82</sub> < 0.253123275, unrefereed, in [`degree44-denominators/`](degree44-denominators/).**
+
 Unrefereed preprints: [Hexagon 2610.00426v1](https://hexagonmath.org/2610.00426?version=1)
 and [Zenodo, corrected disclosure version](https://doi.org/10.5281/zenodo.23520716).
 The certificate bound was [merged into Tao's table on October 18, 2026](https://github.com/teorth/optimizationproblems/pull/229).

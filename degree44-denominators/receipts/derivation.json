@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "derivatives_checked": [
+    2,
+    4,
+    8
+  ],
+  "gauss_exact_through_degree": 7,
+  "gauss_width9_constant": "1/1778112000",
+  "midpoint_width5_constant": "1/1920",
+  "crossing_slope_constant": "1/4",
+  "crossing_curvature_constant": "1/24",
+  "formulas": {
+    "2": "-r*u/(r**2 - 2*r*u + u**2)",
+    "4": "(-r**3*u - 4*r**2*u**2 - r*u**3)/(r**4 - 4*r**3*u + 6*r**2*u**2 - 4*r*u**3 + u**4)",
+    "8": "(-r**7*u - 120*r**6*u**2 - 1191*r**5*u**3 - 2416*r**4*u**4 - 1191*r**3*u**5 - 120*r**2*u**6 - r*u**7)/(r**8 - 8*r**7*u + 28*r**6*u**2 - 56*r**5*u**3 + 70*r**4*u**4 - 56*r**3*u**5 + 28*r**2*u**6 - 8*r*u**7 + u**8)"
+  }
+}
